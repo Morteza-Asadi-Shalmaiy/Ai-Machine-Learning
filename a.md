@@ -29,6 +29,10 @@ it describes the tension between two types of errors that every model makes, two
 
 ---
 
+![alt text](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Ai-Machine-Learning/refs/heads/main/01.jpg)
+
+---
+
 ## ✅ Self-Check Quiz
 
 1. **Your model gets 60% training accuracy and 58% validation accuracy. What's happening?**
@@ -64,6 +68,3 @@ No. There will always be some irreducible error and tradeoff.
 </details>
 
 ---
-
-![alt text](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Ai-Machine-Learning/refs/heads/main/01.jpg)
-
