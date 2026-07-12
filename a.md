@@ -36,7 +36,7 @@ it describes the tension between two types of errors that every model makes, two
 <details>
 <summary>Answer</summary>
 
-**Answer:** Underfitting (High Bias). The model is too simple for both datasets.
+Underfitting (High Bias). The model is too simple for both datasets.
 </details>
 
 2. **Your model gets 99% training accuracy and 55% validation accuracy. What's happening?**
@@ -44,7 +44,7 @@ it describes the tension between two types of errors that every model makes, two
 <details>
 <summary>Answer</summary>
 
-**Answer:** Overfitting (High Variance). The model memorized the training data.
+Overfitting (High Variance). The model memorized the training data.
 </details>
 
 3. **What's one way to fix overfitting?**
@@ -52,7 +52,7 @@ it describes the tension between two types of errors that every model makes, two
 <details>
 <summary>Answer</summary>
 
-**Answer:** Add regularization (L1/L2), increase training data, or simplify the model.
+Add regularization (L1/L2), increase training data, or simplify the model.
 </details>
 
 4. **Can you have 0 bias and 0 variance in a real-world ML model?**
@@ -60,7 +60,7 @@ it describes the tension between two types of errors that every model makes, two
 <details>
 <summaryAnswer</summary>
 
-**Answer:** No. There will always be some irreducible error and tradeoff.
+No. There will always be some irreducible error and tradeoff.
 </details>
 
 ---
