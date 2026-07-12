@@ -65,5 +65,5 @@ No. There will always be some irreducible error and tradeoff.
 
 ---
 
-![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Ai-Machine-Learning/refs/heads/main/01.jpg))
+![alt text](https://raw.githubusercontent.com/Morteza-Asadi-Shalmaiy/Ai-Machine-Learning/refs/heads/main/01.jpg)
 
