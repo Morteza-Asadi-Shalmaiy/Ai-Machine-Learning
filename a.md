@@ -9,6 +9,6 @@
 - Error from being too sensitive to training data
 - High variance → model overfits, memorizes noise, fails to generalize.
 
-## The tradeoff
+## The Tradeoff
 - as you increase model complexity, bias goes down but variance goes up
 - The goal is the sweet spot that minimizes total error on unseen data
