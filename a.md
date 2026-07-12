@@ -11,4 +11,4 @@
 
 ## The Tradeoff
 - as you increase model complexity, bias goes down but variance goes up
-- The goal is the sweet spot that minimizes total error on unseen data
+- Improving one hurts the other
