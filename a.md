@@ -64,3 +64,4 @@ No. There will always be some irreducible error and tradeoff.
 </details>
 
 ---
+<img src=“[https://github.com/KrisKasprzak/ILI9341_t3_controls](https://github.com/Morteza-Asadi-Shalmaiy/Ai-Machine-Learning/blob/main/01.jpg)”>
