@@ -58,7 +58,7 @@ Add regularization (L1/L2), increase training data, or simplify the model.
 4. **Can you have 0 bias and 0 variance in a real-world ML model?**
 
 <details>
-<summaryAnswer</summary>
+<summary>Answer</summary>
 
 No. There will always be some irreducible error and tradeoff.
 </details>
