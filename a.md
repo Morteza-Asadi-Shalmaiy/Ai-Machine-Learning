@@ -1,4 +1,5 @@
 # Concept 1: Bias-Variance Tradeoff
+it describes the tension between two types of errors that every model makes
 
 ## Bias
 - a math term (dont confuse for anything else)
@@ -12,3 +13,5 @@
 ## The Tradeoff
 - as you increase model complexity, bias goes down but variance goes up
 - Improving one hurts the other
+
+a systematic error
