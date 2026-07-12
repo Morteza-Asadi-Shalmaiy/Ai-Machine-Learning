@@ -14,6 +14,7 @@ It is a solution for high variance (overfitting), Sacrifice training performance
 - Use this as your default when you believe most of your features have at least a little bit of predictive power. It also works great when you have correlated features (multicollinearity)
 
 ## Dropout (Neural Networks only)
+- It prevents co-adaptation of neurons.
 - During training, you randomly "drop" (set to zero) a percentage of neurons in a layer for a single pass. (e.g., Dropout rate = 0.5 means half the neurons are turned off).
 - Since any neuron can be turned off at any moment, the network cannot rely on a single "super neuron" or specific collaboration between neurons. It is forced to learn redundant, independent representations of the patterns so that if one pathway dies, another can take over.
 - Exclusively for deep neural networks, especially when you have a massive amount of parameters and limited data. (Note: You turn it off during testing/prediction).
