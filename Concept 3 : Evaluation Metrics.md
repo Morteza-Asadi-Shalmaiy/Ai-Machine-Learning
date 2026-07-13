@@ -1,9 +1,11 @@
 # Concept 3 : Evaluation Metrics
 
 ---
-
-- **Actually Positive (it IS fraud)**
-- **Actually Negative (it is NOT fraud)**
+## Confusion Matrix for `Fraud` & `Not Fraud`
+- Actually Positive (it IS fraud)
+- Actually Negative (it is NOT fraud)
+  
+Our model says "Yes" or "No". Here are the 4 boxes/possiblities :
 
 | | Model Predicts: YES (Positive) | Model Predicts: NO (Negative) |
 | :--- | :--- | :--- |
