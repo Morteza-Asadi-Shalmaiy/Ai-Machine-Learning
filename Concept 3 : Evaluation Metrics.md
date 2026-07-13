@@ -14,7 +14,7 @@ Our model says "Yes" or "No". Here are the 4 boxes/possiblities :
 
 ---
 
-### THE ULTIMATE CLASSIFICATION METRICS CHEAT SHEET
+## Classification Metrics
 
 | Metric | Formula | Plain English (The Vibe) | The Golden Rule (When to use it) |
 | :--- | :--- | :--- | :--- |
