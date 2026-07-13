@@ -1,6 +1,9 @@
-Concept 3 : Evaluation Metrics
+# Concept 3 : Evaluation Metrics
 
 ---
+
+- **Actually Positive (it IS fraud)**
+- **Actually Negative (it is NOT fraud)**
 
 | | Model Predicts: YES (Positive) | Model Predicts: NO (Negative) |
 | :--- | :--- | :--- |
