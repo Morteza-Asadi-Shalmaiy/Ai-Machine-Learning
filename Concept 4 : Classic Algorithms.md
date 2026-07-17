@@ -1,33 +1,46 @@
 # Concept 4 : Classic Algorithms
 
 ## 1. Linear Regression (The Ruler) - *Supervised | Regression*
-- **Mental Model:** You are a detective trying to predict a *number* (like house price). You draw a straight line through a scatterplot that minimizes the total distance between the line and every single dot. We call this "Ordinary Least Squares" (minimizing squared errors). 
-- **The Core Assumption:** It assumes the relationship between your inputs (X) and your output (Y) is perfectly straight (linear) and that the errors are random (normally distributed). 
-- **How it reduces error:** It reduces **BIAS**. Just like Logistic Regression, it is highly rigid. Because it can only draw a straight line, it can't curve to memorize training data, so it rarely overfits. 
-- **When to pick it:** Forecasting trends (sales next quarter), analyzing the *strength* of relationships ("For every extra bedroom, price goes up by $30k"), or as a super-fast baseline for any numeric prediction.
-- **When to AVOID it:** When the relationship is curved (e.g., population growth over time), or when you have massive outliers that yank the line off course.
+- **Mental Model :**
+  - You are a detective trying to predict a *number* (like house price). You draw a straight line through a scatterplot that minimizes the total distance between the line and every single dot. We call this "Ordinary Least Squares" (minimizing squared errors). 
+- **The Core Assumption :**
+  - It assumes the relationship between your inputs (X) and your output (Y) is perfectly straight (linear) and that the errors are random (normally distributed). 
+- **How it reduces error :**
+  - It reduces **BIAS**. Just like Logistic Regression, it is highly rigid. Because it can only draw a straight line, it can't curve to memorize training data, so it rarely overfits. 
+- **When to pick it :**
+  - Forecasting trends (sales next quarter), analyzing the *strength* of relationships ("For every extra bedroom, price goes up by $30k"), or as a super-fast baseline for any numeric prediction.
+- **When to AVOID it :**
+  - When the relationship is curved (e.g., population growth over time), or when you have massive outliers that yank the line off course.
 
 ---
 
 ## 2. Logistic Regression (The Straight-Line Thinker)
 
-- **Mental Model:** Imagine you have a seesaw. You have red dots (bad customers) on one side and green dots (good customers) on the other. Logistic Regression draws a **single straight line** through the playground to separate them. Then, it asks: *"How far is this new dot from my line?"* and squishes that distance into a percentage (probability) using the Sigmoid function.
-- **The Core Assumption:** It assumes your data can be roughly split by a straight line (or a flat plane). 
-- **How it reduces error:** It reduces **BIAS**. It is a *very* simple, rigid model. Because it can only draw a straight line, it can't twist itself into knots to memorize your training data. Therefore, it almost never overfits. 
-- **When to pick it:** 
+- **Mental Model :**
+  - Imagine you have a seesaw. You have red dots (bad customers) on one side and green dots (good customers) on the other. Logistic Regression draws a **single straight line** through the playground to separate them. Then, it asks: *"How far is this new dot from my line?"* and squishes that distance into a percentage (probability) using the Sigmoid function.
+- **The Core Assumption :**
+  - It assumes your data can be roughly split by a straight line (or a flat plane). 
+- **How it reduces error :**
+  - It reduces **BIAS**. It is a *very* simple, rigid model. Because it can only draw a straight line, it can't twist itself into knots to memorize your training data. Therefore, it almost never overfits. 
+- **When to pick it :** 
   - You need a **baseline** (start here before trying anything fancy).
   - You need **interpretability** ("For every $1,000 increase in income, the probability of buying goes up by 5%").
   - You have **a small dataset** and clean, linear relationships.
-- **When to AVOID it:** When relationships are complicated (e.g., circles within circles). It will have terrible **Bias** (high error) because it simply isn't smart enough to draw a curve.
+- **When to AVOID it :**
+  - When relationships are complicated (e.g., circles within circles). It will have terrible **Bias** (high error) because it simply isn't smart enough to draw a curve.
 
 ---
 
 ## 3. K-Means Clustering (The Organizer) - *Unsupervised | Clustering*
-- **Mental Model:** Imagine you have a bag of mixed Lego bricks (red, blue, yellow) but you don't have the box to tell you which is which. You decide to split them into **K=3** piles. You randomly drop 3 bricks on the floor as "centers." Every other brick goes to the nearest center. Then, you find the *actual* middle of each new pile, move your center there, and repeat until the piles stop changing. 
-- **The Core Assumption:** It assumes your clusters are roughly spherical (circular) and equal in size. 
-- **How it reduces error:** It minimizes **Variance** *within* each cluster (it tries to make each pile as tight as possible). 
-- **When to pick it:** Customer segmentation (grouping users by purchasing behavior), image compression (reducing colors in a picture), or when you have a rough idea of how many groups (K) exist.
-- **When to AVOID it:** 
+- **Mental Model :**
+  - Imagine you have a bag of mixed Lego bricks (red, blue, yellow) but you don't have the box to tell you which is which. You decide to split them into **K=3** piles. You randomly drop 3 bricks on the floor as "centers." Every other brick goes to the nearest center. Then, you find the *actual* middle of each new pile, move your center there, and repeat until the piles stop changing. 
+- **The Core Assumption :**
+  - It assumes your clusters are roughly spherical (circular) and equal in size. 
+- **How it reduces error :**
+  - It minimizes **Variance** *within* each cluster (it tries to make each pile as tight as possible). 
+- **When to pick it :**
+  - Customer segmentation (grouping users by purchasing behavior), image compression (reducing colors in a picture), or when you have a rough idea of how many groups (K) exist.
+- **When to AVOID it :** 
   - You don't know "K" (you have to guess it beforehand).
   - Your clusters are weird shapes (e.g., long snake-like shapes, or concentric circles). K-Means will fail terribly at these.
 
