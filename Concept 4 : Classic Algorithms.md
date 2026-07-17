@@ -1,6 +1,15 @@
 # Concept 4 : Classic Algorithms
 
-## 1. Logistic Regression (The Straight-Line Thinker)
+## 1. Linear Regression (The Ruler) - *Supervised | Regression*
+- **Mental Model:** You are a detective trying to predict a *number* (like house price). You draw a straight line through a scatterplot that minimizes the total distance between the line and every single dot. We call this "Ordinary Least Squares" (minimizing squared errors). 
+- **The Core Assumption:** It assumes the relationship between your inputs (X) and your output (Y) is perfectly straight (linear) and that the errors are random (normally distributed). 
+- **How it reduces error:** It reduces **BIAS**. Just like Logistic Regression, it is highly rigid. Because it can only draw a straight line, it can't curve to memorize training data, so it rarely overfits. 
+- **When to pick it:** Forecasting trends (sales next quarter), analyzing the *strength* of relationships ("For every extra bedroom, price goes up by $30k"), or as a super-fast baseline for any numeric prediction.
+- **When to AVOID it:** When the relationship is curved (e.g., population growth over time), or when you have massive outliers that yank the line off course.
+
+---
+
+## 2. Logistic Regression (The Straight-Line Thinker)
 
 - **Mental Model:** Imagine you have a seesaw. You have red dots (bad customers) on one side and green dots (good customers) on the other. Logistic Regression draws a **single straight line** through the playground to separate them. Then, it asks: *"How far is this new dot from my line?"* and squishes that distance into a percentage (probability) using the Sigmoid function.
 - **The Core Assumption:** It assumes your data can be roughly split by a straight line (or a flat plane). 
@@ -10,15 +19,6 @@
   - You need **interpretability** ("For every $1,000 increase in income, the probability of buying goes up by 5%").
   - You have **a small dataset** and clean, linear relationships.
 - **When to AVOID it:** When relationships are complicated (e.g., circles within circles). It will have terrible **Bias** (high error) because it simply isn't smart enough to draw a curve.
-
----
-
-## 2. Linear Regression (The Ruler) - *Supervised | Regression*
-- **Mental Model:** You are a detective trying to predict a *number* (like house price). You draw a straight line through a scatterplot that minimizes the total distance between the line and every single dot. We call this "Ordinary Least Squares" (minimizing squared errors). 
-- **The Core Assumption:** It assumes the relationship between your inputs (X) and your output (Y) is perfectly straight (linear) and that the errors are random (normally distributed). 
-- **How it reduces error:** It reduces **BIAS**. Just like Logistic Regression, it is highly rigid. Because it can only draw a straight line, it can't curve to memorize training data, so it rarely overfits. 
-- **When to pick it:** Forecasting trends (sales next quarter), analyzing the *strength* of relationships ("For every extra bedroom, price goes up by $30k"), or as a super-fast baseline for any numeric prediction.
-- **When to AVOID it:** When the relationship is curved (e.g., population growth over time), or when you have massive outliers that yank the line off course.
 
 ---
 
@@ -47,8 +47,8 @@
   - You have **high-dimensional data** (hundreds of columns). In high dimensions, *everyone* is far apart, so "nearest neighbors" lose their meaning. (We call this the "Curse of Dimensionality").
   - You have a huge dataset (because KNN has to calculate the distance to *every single point* to make one prediction—it's painfully slow).
 
-
 ---
+
 ## 5. Hierarchical Clustering (The Family Tree) - *Unsupervised | Clustering*
 - **Mental Model:** Imagine you have a bunch of animals. You start by saying, "Every animal is its own cluster." Then, you find the two *closest* animals and glue them together into a small family. Then you find the next two closest (or closest families) and glue them together. You keep gluing until everything is one giant cluster. You draw this process as a **Dendrogram** (a tree-like diagram). 
 - **The Core Assumption:** It assumes that distance (similarity) can be measured in a nested, tree-like way. 
@@ -62,35 +62,18 @@
   - You already know exactly how many clusters you want (K-Means is faster in that case).
 
 ---
-## 1. Decision Tree (The Single Student)
-- **What it is:** A flowchart. "Is age > 30? If yes, go left. Is income > $50k? If yes, go right." 
-- **Good:** Super easy to explain to your boss. 
-- **Bad:** It is the ultimate memorizer. It will draw incredibly weird, specific boxes around your training data just to get a perfect score. It overfits *badly*.
+
+## 6. Naive Bayes (The Optimistic Gambler) - *Supervised | Classification*
+- **Mental Model:** You wake up and see dark clouds. You want to know if it will rain. You look at your past data: *"On rainy days, 90% of the time there were dark clouds. On sunny days, only 10% of the time were there dark clouds."* You multiply these probabilities together to make your guess. It’s called **"Naive"** because it makes a huge, bold assumption: *It believes every single feature (clouds, wind, humidity) is completely independent of each other.* (Spoiler: In real life, they aren't, but it often works anyway!).
+- **The Core Assumption:** All features are independent given the class label. 
+- **How it reduces error:** It reduces **VARIANCE** (hard to overfit). Because it forces the features to be independent, it artificially simplifies the real world. This "wrong" assumption acts like a built-in regularizer, making it incredibly robust to noise and small datasets.
+- **When to pick it:** **TEXT CLASSIFICATION** (Spam detection / Sentiment analysis). It works surprisingly well with word counts. Also, pick it when you have **very little training data** but a lot of features.
+- **When to AVOID it:** When features are *highly* correlated (e.g., Age and Income). If they are, the "naive" assumption breaks down and the probability predictions become wildly inaccurate.
+
 
 ---
 
-## 2. Random Forest (The Group Project - "Wisdom of the Crowd")
-- **How it's built:** You create 100 different Decision Trees. But you do two tricks:
-  - **Trick A (Bagging):** You give each tree a *different* slice of the data (some get duplicates, some miss out).
-  - **Trick B:** At each split, you only let the tree look at a *few* of the features (e.g., Tree 1 can only use Age and Income; Tree 2 can only use Gender and Credit Score). 
-- **The Result:** You now have 100 *dumb*, *different* trees that are all wrong in totally different ways. 
-- **Final Answer:** You ask all 100 trees to vote on the answer. 
-- **How it reduces error:** It reduces **VARIANCE**. (Variance = being too sensitive to the training data). If one tree memorized a weird outlier, the other 99 trees override it. It creates a "safety in numbers" effect.
-
----
-
-## 3. Gradient Boosting (The Study Group - "Learn from Mistakes")
-- **How it's built:** You build *one* tiny, weak tree. It makes some wrong predictions. 
-- **The Twist:** Instead of building the next tree from scratch, you say, *"Tree 1, you got these 5 guesses wrong. Tree 2, I am going to completely focus your attention ONLY on those wrong ones."*
-- You build Tree 2. It fixes some of those. 
-- Then you build Tree 3, and tell it to focus ONLY on the mistakes Tree 1 and Tree 2 *still* got wrong.
-- You keep doing this until you've fixed all the errors.
-- **The Result:** You get a super-strong, highly polished final model.
-- **How it reduces error:** It reduces **BIAS**. (Bias = being too simple to capture the pattern). By focusing on mistakes, it relentlessly squeezes out every ounce of predictive power. 
-
----
-
-## 6. Support Vector Machines (SVM) (The Border Patrol)
+## 7. Support Vector Machines (SVM) (The Border Patrol)
 
 - **Mental Model:** Imagine you have red and green dots on a table. You need to separate them. Instead of just drawing any old line (like Logistic Regression), SVM asks: *"What is the absolute widest empty street I can draw between these two groups?"* It only cares about the dots *right on the edge* of the street (these are called **Support Vectors**). 
 - **The Magic Trick (Kernels):** Here is the genius part. What if the dots are mixed up so badly that NO straight line can separate them? SVM says: *"No problem, I will mathematically fling all the dots into outer space (a higher dimension) where they ARE separable by a flat plane."* We call this the **Kernel Trick** (RBF, Polynomial, etc.).
@@ -106,19 +89,15 @@
 
 ---
 
-## 8. Naive Bayes (The Optimistic Gambler) - *Supervised | Classification*
-- **Mental Model:** You wake up and see dark clouds. You want to know if it will rain. You look at your past data: *"On rainy days, 90% of the time there were dark clouds. On sunny days, only 10% of the time were there dark clouds."* You multiply these probabilities together to make your guess. It’s called **"Naive"** because it makes a huge, bold assumption: *It believes every single feature (clouds, wind, humidity) is completely independent of each other.* (Spoiler: In real life, they aren't, but it often works anyway!).
-- **The Core Assumption:** All features are independent given the class label. 
-- **How it reduces error:** It reduces **VARIANCE** (hard to overfit). Because it forces the features to be independent, it artificially simplifies the real world. This "wrong" assumption acts like a built-in regularizer, making it incredibly robust to noise and small datasets.
-- **When to pick it:** **TEXT CLASSIFICATION** (Spam detection / Sentiment analysis). It works surprisingly well with word counts. Also, pick it when you have **very little training data** but a lot of features.
-- **When to AVOID it:** When features are *highly* correlated (e.g., Age and Income). If they are, the "naive" assumption breaks down and the probability predictions become wildly inaccurate.
 
+## 8. Decision Tree (The Single Student)
+- **What it is:** A flowchart. "Is age > 30? If yes, go left. Is income > $50k? If yes, go right." 
+- **Good:** Super easy to explain to your boss. 
+- **Bad:** It is the ultimate memorizer. It will draw incredibly weird, specific boxes around your training data just to get a perfect score. It overfits *badly*.
 
 ---
 
-
-
-## 11. Neural Networks / Deep Learning (The Brain Simulator) - *Supervised (or Unsupervised) | Everything*
+## 9. Neural Networks / Deep Learning (The Brain Simulator) - *Supervised (or Unsupervised) | Everything*
 - **Mental Model:** Imagine a giant game of telephone. You have an input layer (pixels of a cat picture), which passes signals to a "Hidden Layer" of neurons. Each neuron takes the signal, multiplies it by a weight, adds a bias, and decides whether to "fire" (pass it on) based on a non-linear activation function (like ReLU). This passes to the next hidden layer, and the next, until the final layer spits out "Cat" vs "Dog". It learns by **Backpropagation**: every time it gets an answer wrong, it sends an error signal *backwards* through the network and slightly adjusts all those weights to do better next time.
 - **The Core Assumption:** It makes almost *no* assumptions about the data. It is a universal function approximator—given enough neurons and data, it can learn *any* mathematical pattern.
 - **How it reduces error:** It reduces **BIAS** to almost zero (it can memorize literally anything). However, this comes at the massive cost of **EXTREMELY HIGH VARIANCE**. It will overfit horrifically unless you have **massive amounts of data** and use heavy regularization (Dropout, Early Stopping). 
@@ -132,3 +111,26 @@
   - You have limited compute power (GPUs) or tight deadlines (Neural Nets take hours/days to train).
 
 ---
+## 10. Random Forest (The Group Project - "Wisdom of the Crowd")
+- **How it's built:** You create 100 different Decision Trees. But you do two tricks:
+  - **Trick A (Bagging):** You give each tree a *different* slice of the data (some get duplicates, some miss out).
+  - **Trick B:** At each split, you only let the tree look at a *few* of the features (e.g., Tree 1 can only use Age and Income; Tree 2 can only use Gender and Credit Score). 
+- **The Result:** You now have 100 *dumb*, *different* trees that are all wrong in totally different ways. 
+- **Final Answer:** You ask all 100 trees to vote on the answer. 
+- **How it reduces error:** It reduces **VARIANCE**. (Variance = being too sensitive to the training data). If one tree memorized a weird outlier, the other 99 trees override it. It creates a "safety in numbers" effect.
+
+---
+
+
+## 11. Gradient Boosting (The Study Group - "Learn from Mistakes")
+- **How it's built:** You build *one* tiny, weak tree. It makes some wrong predictions. 
+- **The Twist:** Instead of building the next tree from scratch, you say, *"Tree 1, you got these 5 guesses wrong. Tree 2, I am going to completely focus your attention ONLY on those wrong ones."*
+- You build Tree 2. It fixes some of those. 
+- Then you build Tree 3, and tell it to focus ONLY on the mistakes Tree 1 and Tree 2 *still* got wrong.
+- You keep doing this until you've fixed all the errors.
+- **The Result:** You get a super-strong, highly polished final model.
+- **How it reduces error:** It reduces **BIAS**. (Bias = being too simple to capture the pattern). By focusing on mistakes, it relentlessly squeezes out every ounce of predictive power. 
+
+---
+
+
