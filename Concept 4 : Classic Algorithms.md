@@ -124,14 +124,17 @@
 ---
 
 ## 9. Neural Networks / Deep Learning (The Brain Simulator) - *Supervised (or Unsupervised) | Everything*
-- **Mental Model:** Imagine a giant game of telephone. You have an input layer (pixels of a cat picture), which passes signals to a "Hidden Layer" of neurons. Each neuron takes the signal, multiplies it by a weight, adds a bias, and decides whether to "fire" (pass it on) based on a non-linear activation function (like ReLU). This passes to the next hidden layer, and the next, until the final layer spits out "Cat" vs "Dog". It learns by **Backpropagation**: every time it gets an answer wrong, it sends an error signal *backwards* through the network and slightly adjusts all those weights to do better next time.
-- **The Core Assumption:** It makes almost *no* assumptions about the data. It is a universal function approximator—given enough neurons and data, it can learn *any* mathematical pattern.
-- **How it reduces error:** It reduces **BIAS** to almost zero (it can memorize literally anything). However, this comes at the massive cost of **EXTREMELY HIGH VARIANCE**. It will overfit horrifically unless you have **massive amounts of data** and use heavy regularization (Dropout, Early Stopping). 
-- **When to pick it:** 
+- **Mental Model :**
+  - Imagine a giant game of telephone. You have an input layer (pixels of a cat picture), which passes signals to a "Hidden Layer" of neurons. Each neuron takes the signal, multiplies it by a weight, adds a bias, and decides whether to "fire" (pass it on) based on a non-linear activation function (like ReLU). This passes to the next hidden layer, and the next, until the final layer spits out "Cat" vs "Dog". It learns by **Backpropagation**: every time it gets an answer wrong, it sends an error signal *backwards* through the network and slightly adjusts all those weights to do better next time.
+- **The Core Assumption :**
+  - It makes almost *no* assumptions about the data. It is a universal function approximator—given enough neurons and data, it can learn *any* mathematical pattern.
+- **How it reduces error :**
+  - It reduces **BIAS** to almost zero (it can memorize literally anything). However, this comes at the massive cost of **EXTREMELY HIGH VARIANCE**. It will overfit horrifically unless you have **massive amounts of data** and use heavy regularization (Dropout, Early Stopping). 
+- **When to pick it :** 
   - **Unstructured data**: Images, Audio, Video, Natural Language (text).
   - You have **huge datasets** (millions of samples).
   - You don't care about interpretability; you just want SOTA (State of the Art) performance.
-- **When to AVOID it:** 
+- **When to AVOID it :** 
   - You have **small tabular data** (like a spreadsheet with 5,000 rows). Gradient Boosting will almost always beat a Neural Net here.
   - You need to explain *why* the model made a decision to a regulator or doctor.
   - You have limited compute power (GPUs) or tight deadlines (Neural Nets take hours/days to train).
