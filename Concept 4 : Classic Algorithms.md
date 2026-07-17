@@ -86,25 +86,30 @@
   - You wake up and see dark clouds. You want to know if it will rain. You look at your past data: *"On rainy days, 90% of the time there were dark clouds. On sunny days, only 10% of the time were there dark clouds."* You multiply these probabilities together to make your guess. It’s called **"Naive"** because it makes a huge, bold assumption: *It believes every single feature (clouds, wind, humidity) is completely independent of each other.* (Spoiler: In real life, they aren't, but it often works anyway!).
 - **The Core Assumption :**
   - All features are independent given the class label. 
-- **How it reduces error:**
+- **How it reduces error :**
   - It reduces **VARIANCE** (hard to overfit). Because it forces the features to be independent, it artificially simplifies the real world. This "wrong" assumption acts like a built-in regularizer, making it incredibly robust to noise and small datasets.
-- **When to pick it:** **TEXT CLASSIFICATION** (Spam detection / Sentiment analysis). It works surprisingly well with word counts. Also, pick it when you have **very little training data** but a lot of features.
-- **When to AVOID it:** When features are *highly* correlated (e.g., Age and Income). If they are, the "naive" assumption breaks down and the probability predictions become wildly inaccurate.
+- **When to pick it :**
+  - **TEXT CLASSIFICATION** (Spam detection / Sentiment analysis). It works surprisingly well with word counts. Also, pick it when you have **very little training data** but a lot of features.
+- **When to AVOID it :**
+  - When features are *highly* correlated (e.g., Age and Income). If they are, the "naive" assumption breaks down and the probability predictions become wildly inaccurate.
 
 
 ---
 
 ## 7. Support Vector Machines (SVM) (The Border Patrol)
 
-- **Mental Model:** Imagine you have red and green dots on a table. You need to separate them. Instead of just drawing any old line (like Logistic Regression), SVM asks: *"What is the absolute widest empty street I can draw between these two groups?"* It only cares about the dots *right on the edge* of the street (these are called **Support Vectors**). 
-- **The Magic Trick (Kernels):** Here is the genius part. What if the dots are mixed up so badly that NO straight line can separate them? SVM says: *"No problem, I will mathematically fling all the dots into outer space (a higher dimension) where they ARE separable by a flat plane."* We call this the **Kernel Trick** (RBF, Polynomial, etc.).
-- **How it reduces error:** It is a master of the **Bias-Variance tradeoff**. 
+- **Mental Model :**
+  - Imagine you have red and green dots on a table. You need to separate them. Instead of just drawing any old line (like Logistic Regression), SVM asks: *"What is the absolute widest empty street I can draw between these two groups?"* It only cares about the dots *right on the edge* of the street (these are called **Support Vectors**). 
+- **The Magic Trick (Kernels) :**
+  - Here is the genius part. What if the dots are mixed up so badly that NO straight line can separate them? SVM says: *"No problem, I will mathematically fling all the dots into outer space (a higher dimension) where they ARE separable by a flat plane."* We call this the **Kernel Trick** (RBF, Polynomial, etc.).
+- **How it reduces error :**
+  - It is a master of the **Bias-Variance tradeoff**. 
   - If you use a **Linear kernel**, it acts like Logistic Regression (High Bias, Low Variance).
   - If you use a **complex kernel (RBF)** and turn up the settings, it draws incredibly wiggly, crazy borders around your training data (Low Bias, High Variance - prone to overfitting!). 
-- **When to pick it:** 
+- **When to pick it :** 
   - You have **clear, complex boundaries** but **not too many rows** (SVM is amazing when you have, say, 1,000 rows and 200 columns).
   - You are working with **images or text classification** (SVMs used to dominate here before Deep Learning took over).
-- **When to AVOID it:** 
+- **When to AVOID it :** 
   - You have **massive datasets** (millions of rows). Training an SVM with a complex kernel takes *forever* because it has to calculate the distance between every single pair of points.
   - You need to explain your model to a business stakeholder (SVMs are "black boxes"—nobody knows what that outer-space boundary actually means).
 
