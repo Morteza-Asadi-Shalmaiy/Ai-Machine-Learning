@@ -48,8 +48,10 @@
 
 ## 4. K-Nearest Neighbors (KNN) (The Copycat)
 
-- **Mental Model:** You move into a new neighborhood. You want to know if the area is safe. You look at your **5 closest neighbors** (K=5). If 4 out of 5 of them got robbed last year, you assume your house is unsafe. If 4 out of 5 have big gardens, you assume yours will too. KNN doesn't *learn* any rules; it just memorizes the entire dataset and waits for a new point to show up so it can measure distances and copy the closest ones.
-- **The Core Assumption:** It assumes that *similar things exist close together* in space.
+- **Mental Model :**
+  - You move into a new neighborhood. You want to know if the area is safe. You look at your **5 closest neighbors** (K=5). If 4 out of 5 of them got robbed last year, you assume your house is unsafe. If 4 out of 5 have big gardens, you assume yours will too. KNN doesn't *learn* any rules; it just memorizes the entire dataset and waits for a new point to show up so it can measure distances and copy the closest ones.
+- **The Core Assumption :**
+  - It assumes that *similar things exist close together* in space.
 - **How it reduces error:** It has a **Variance** problem. Because it memorizes everything, one single weird outlier in your data can trick KNN into making a bad prediction. *However*, you control this by picking "K" (the number of neighbors). 
   - A small K (e.g., K=1) = High Variance (very jumpy, overfits).
   - A large K (e.g., K=50) = Lowers Variance (smooths out the noise, but increases Bias because you're averaging over too large of an area).
@@ -63,23 +65,29 @@
 ---
 
 ## 5. Hierarchical Clustering (The Family Tree) - *Unsupervised | Clustering*
-- **Mental Model:** Imagine you have a bunch of animals. You start by saying, "Every animal is its own cluster." Then, you find the two *closest* animals and glue them together into a small family. Then you find the next two closest (or closest families) and glue them together. You keep gluing until everything is one giant cluster. You draw this process as a **Dendrogram** (a tree-like diagram). 
-- **The Core Assumption:** It assumes that distance (similarity) can be measured in a nested, tree-like way. 
-- **How it reduces error:** You don't have to guess "K" upfront! You just build the tree, look at it, and cut it at whatever height gives you the number of clusters that makes sense. 
-- **When to pick it:** 
+- **Mental Model :**
+  - Imagine you have a bunch of animals. You start by saying, "Every animal is its own cluster." Then, you find the two *closest* animals and glue them together into a small family. Then you find the next two closest (or closest families) and glue them together. You keep gluing until everything is one giant cluster. You draw this process as a **Dendrogram** (a tree-like diagram). 
+- **The Core Assumption :**
+  - It assumes that distance (similarity) can be measured in a nested, tree-like way. 
+- **How it reduces error :**
+  - You don't have to guess "K" upfront! You just build the tree, look at it, and cut it at whatever height gives you the number of clusters that makes sense. 
+- **When to pick it :** 
   - Exploratory data analysis (you have NO idea how many groups there are).
   - You have a **small dataset** (under 10,000 rows) because it's computationally heavy.
   - You want to visualize the relationship between data points beautifully.
-- **When to AVOID it:** 
+- **When to AVOID it :** 
   - You have **millions of rows** (it takes forever to calculate the distance between every single pair of points).
   - You already know exactly how many clusters you want (K-Means is faster in that case).
 
 ---
 
 ## 6. Naive Bayes (The Optimistic Gambler) - *Supervised | Classification*
-- **Mental Model:** You wake up and see dark clouds. You want to know if it will rain. You look at your past data: *"On rainy days, 90% of the time there were dark clouds. On sunny days, only 10% of the time were there dark clouds."* You multiply these probabilities together to make your guess. It’s called **"Naive"** because it makes a huge, bold assumption: *It believes every single feature (clouds, wind, humidity) is completely independent of each other.* (Spoiler: In real life, they aren't, but it often works anyway!).
-- **The Core Assumption:** All features are independent given the class label. 
-- **How it reduces error:** It reduces **VARIANCE** (hard to overfit). Because it forces the features to be independent, it artificially simplifies the real world. This "wrong" assumption acts like a built-in regularizer, making it incredibly robust to noise and small datasets.
+- **Mental Model :**
+  - You wake up and see dark clouds. You want to know if it will rain. You look at your past data: *"On rainy days, 90% of the time there were dark clouds. On sunny days, only 10% of the time were there dark clouds."* You multiply these probabilities together to make your guess. It’s called **"Naive"** because it makes a huge, bold assumption: *It believes every single feature (clouds, wind, humidity) is completely independent of each other.* (Spoiler: In real life, they aren't, but it often works anyway!).
+- **The Core Assumption :**
+  - All features are independent given the class label. 
+- **How it reduces error:**
+  - It reduces **VARIANCE** (hard to overfit). Because it forces the features to be independent, it artificially simplifies the real world. This "wrong" assumption acts like a built-in regularizer, making it incredibly robust to noise and small datasets.
 - **When to pick it:** **TEXT CLASSIFICATION** (Spam detection / Sentiment analysis). It works surprisingly well with word counts. Also, pick it when you have **very little training data** but a lot of features.
 - **When to AVOID it:** When features are *highly* correlated (e.g., Age and Income). If they are, the "naive" assumption breaks down and the probability predictions become wildly inaccurate.
 
