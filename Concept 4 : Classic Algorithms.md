@@ -152,13 +152,17 @@
 
 
 ## 11. Gradient Boosting (The Study Group - "Learn from Mistakes")
-- **How it's built:** You build *one* tiny, weak tree. It makes some wrong predictions. 
-- **The Twist:** Instead of building the next tree from scratch, you say, *"Tree 1, you got these 5 guesses wrong. Tree 2, I am going to completely focus your attention ONLY on those wrong ones."*
-- You build Tree 2. It fixes some of those. 
-- Then you build Tree 3, and tell it to focus ONLY on the mistakes Tree 1 and Tree 2 *still* got wrong.
-- You keep doing this until you've fixed all the errors.
-- **The Result:** You get a super-strong, highly polished final model.
-- **How it reduces error:** It reduces **BIAS**. (Bias = being too simple to capture the pattern). By focusing on mistakes, it relentlessly squeezes out every ounce of predictive power. 
+- **How it's built :**
+  - You build *one* tiny, weak tree. It makes some wrong predictions. 
+- **The Twist :**
+  - Instead of building the next tree from scratch, you say, *"Tree 1, you got these 5 guesses wrong. Tree 2, I am going to completely focus your attention ONLY on those wrong ones."*
+  - You build Tree 2. It fixes some of those. 
+  - Then you build Tree 3, and tell it to focus ONLY on the mistakes Tree 1 and Tree 2 *still* got wrong.
+  - You keep doing this until you've fixed all the errors.
+- **The Result :**
+  - You get a super-strong, highly polished final model.
+- **How it reduces error :**
+  - It reduces **BIAS**. (Bias = being too simple to capture the pattern). By focusing on mistakes, it relentlessly squeezes out every ounce of predictive power. 
 
 ---
 
