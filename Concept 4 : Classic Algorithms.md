@@ -152,6 +152,15 @@
 - **How it reduces error :**
   - It reduces **VARIANCE**. (Variance = being too sensitive to the training data). If one tree memorized a weird outlier, the other 99 trees override it. It creates a "safety in numbers" effect.
 
+- **Advantages :**
+  - Random Forest provides very accurate predictions even with large datasets.
+  - Random Forest can perform well after handling missing data through preprocessing techniques like imputation.
+  - It doesn’t require normalization or standardization on dataset.
+  - When we combine multiple decision trees it reduces the risk of overfitting of the model.
+- **Limitations :**
+  - It can be computationally expensive especially with a large number of trees.
+  - It’s harder to interpret the model compared to simpler models like decision trees.
+
 ---
 
 
