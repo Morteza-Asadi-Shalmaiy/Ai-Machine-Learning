@@ -141,9 +141,10 @@
 
 ---
 ## 10. Random Forest (The Group Project - "Wisdom of the Crowd")
-- **How it's built:** You create 100 different Decision Trees. But you do two tricks:
-  - **Trick A (Bagging):** You give each tree a *different* slice of the data (some get duplicates, some miss out).
-  - **Trick B:** At each split, you only let the tree look at a *few* of the features (e.g., Tree 1 can only use Age and Income; Tree 2 can only use Gender and Credit Score). 
+- **How it's built :**
+  - You create 100 different Decision Trees. But you do two tricks:
+    - **Trick A (Bagging):** You give each tree a *different* slice of the data (some get duplicates, some miss out).
+    - **Trick B:** At each split, you only let the tree look at a *few* of the features (e.g., Tree 1 can only use Age and Income; Tree 2 can only use Gender and Credit Score). 
 - **The Result :**
   - You now have 100 *dumb*, *different* trees that are all wrong in totally different ways. 
 - **Final Answer :**
