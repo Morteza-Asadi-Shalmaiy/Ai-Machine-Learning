@@ -20,5 +20,5 @@
 
 **Data leakage:** 
 - when information from outside the training set (often from the future, or from the target itself) sneaks into training, giving unrealistically good results that collapse in production. Classic examples: scaling/normalizing using statistics computed on the *full* dataset (including test data) before splitting; including a feature that's a proxy for the target (e.g., "days until diagnosis" when predicting diagnosis).
-
+https://www.geeksforgeeks.org/machine-learning/data-leakage/
 ---
