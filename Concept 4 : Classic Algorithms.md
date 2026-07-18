@@ -144,9 +144,12 @@
 - **How it's built:** You create 100 different Decision Trees. But you do two tricks:
   - **Trick A (Bagging):** You give each tree a *different* slice of the data (some get duplicates, some miss out).
   - **Trick B:** At each split, you only let the tree look at a *few* of the features (e.g., Tree 1 can only use Age and Income; Tree 2 can only use Gender and Credit Score). 
-- **The Result:** You now have 100 *dumb*, *different* trees that are all wrong in totally different ways. 
-- **Final Answer:** You ask all 100 trees to vote on the answer. 
-- **How it reduces error:** It reduces **VARIANCE**. (Variance = being too sensitive to the training data). If one tree memorized a weird outlier, the other 99 trees override it. It creates a "safety in numbers" effect.
+- **The Result :**
+  - You now have 100 *dumb*, *different* trees that are all wrong in totally different ways. 
+- **Final Answer :**
+  - You ask all 100 trees to vote on the answer. 
+- **How it reduces error :**
+  - It reduces **VARIANCE**. (Variance = being too sensitive to the training data). If one tree memorized a weird outlier, the other 99 trees override it. It creates a "safety in numbers" effect.
 
 ---
 
