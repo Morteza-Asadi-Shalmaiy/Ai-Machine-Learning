@@ -45,26 +45,6 @@ You write real code every time. I don't accept pseudocode or "I think I'd do X" 
 
 ---
 
-## Ready-to-start point
-
-Module 1 (data structures & idioms) is teed up whenever you want to begin. Just say **"start"** or **"go"**.
-
----Here's a self-contained prompt you can paste (in this conversation, whenever you're ready) to kick off Module 1:
-
----
-
-**Start Module 1: Core Data Structures & Idioms**
-
-Coach me on Python core data structures & idioms — lists, dicts, tuples, sets, comprehensions, slicing, unpacking — as prep for a mid-level AI Engineer interview. I'm a Python beginner.
-
-Teach the concept first, then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer instead of fully working through it. Don't move to Module 2 until I'm consistently passing.
-
----
-
-Just paste that (or literally just say **"start Module 1"**, since I already have the roadmap in this thread) and we'll begin. Same works for Modules 2–6 later — swap the module name/topic in the first line.
-
----
-
 # Module Starter Prompts — Python Interview Prep
 
 Paste the relevant prompt into this conversation whenever you're ready to start (or resume) that module. Each one is self-contained and tells me exactly how to coach you.
