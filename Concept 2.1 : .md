@@ -1,0 +1,64 @@
+# Python Prep Roadmap — AI Engineer Interview (1-2 weeks)
+
+**Scope:** ML/AI-relevant Python only. No generic algorithm puzzles (sorting, graph traversal, DP) unless you tell me the round is generic SWE-style.
+
+**Your level:** Python beginner.
+
+**Companion track:** ML/AI theory (separate conversation) — bias-variance, regularization, metrics, RF vs GBM, leakage, then PyTorch/LLMs/deployment.
+
+---
+
+## How each session works
+
+1. **Teach** — short, focused concept explanation (no fluff).
+2. **Exercise** — a practical, often multi-part task. Multi-part on purpose: interviewers expect you to answer the *whole* question, not stop at the first sub-point or a one-word diagnosis.
+3. **Evaluate** — I grade your actual code like an interviewer would:
+   - What's correct
+   - What's missing or fragile (edge cases, inefficiency, style)
+   - A score (/10)
+   - Follow-up pressure if you stopped short
+4. **Move on** once you've hit a solid bar — not perfection, but "would pass an interview" level.
+
+You write real code every time. I don't accept pseudocode or "I think I'd do X" — same standard as a live coding round.
+
+---
+
+## The 6 Modules (in order)
+
+| # | Module | Why it's tested |
+|---|--------|------------------|
+| 1 | **Core data structures & idioms** — lists, dicts, tuples, sets, comprehensions, slicing, unpacking | Baseline fluency. Every ML coding question sits on top of this. Weak here = slow and clunky everywhere else. |
+| 2 | **Functions** — default args, `*args`/`**kwargs`, lambdas | Shows up constantly in ML code (`sorted(key=lambda...)`, flexible configs, wrapping model calls). |
+| 3 | **OOP basics** — classes, `__init__`, inheritance | Directly mirrors PyTorch's `nn.Module` pattern (`class Model(nn.Module): def __init__(self): super().__init__()...`). If this is shaky, PyTorch will feel like magic instead of mechanics. |
+| 4 | **NumPy fundamentals** — vectorization, broadcasting, indexing | Classic interview move: "here's a slow loop, vectorize it." Also underlies almost all data preprocessing. |
+| 5 | **ML-flavored coding exercises** — sigmoid, softmax, accuracy/precision/F1 from scratch, small data manipulation tasks | The bread-and-butter "write a function" round for ML-specific interviews. Tests whether you understand the math *and* can implement it cleanly. |
+| 6 | **Generators/iterators (lightweight)** | Underlies PyTorch `DataLoader`/`Dataset` — understanding `__iter__`/`__next__`/`yield` demystifies how batching works under the hood. |
+
+---
+
+## Ground rules
+
+- **No skipping to the label.** If asked "what's wrong with this code" or "what metric would you use," a one-word answer isn't enough — I'll push for the full reasoning, tradeoffs, and a concrete fix/example, same as a real interviewer would.
+- **Beginner-paced, not beginner-scoped.** We won't skip anything relevant just because it's your first time — we'll just take the time to build it up properly.
+- We only move to the next module once you're consistently scoring at a "pass" level on the current one — not necessarily 10/10, but solid.
+- If you want, at the end we can do a **mock timed exercise** mixing modules 1, 4, and 5, since that combo is the most realistic simulation of an actual live coding round.
+
+---
+
+## Ready-to-start point
+
+Module 1 (data structures & idioms) is teed up whenever you want to begin. Just say **"start"** or **"go"**.
+
+---Here's a self-contained prompt you can paste (in this conversation, whenever you're ready) to kick off Module 1:
+
+---
+
+**Start Module 1: Core Data Structures & Idioms**
+
+Coach me on Python core data structures & idioms — lists, dicts, tuples, sets, comprehensions, slicing, unpacking — as prep for a mid-level AI Engineer interview. I'm a Python beginner.
+
+Teach the concept first, then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer instead of fully working through it. Don't move to Module 2 until I'm consistently passing.
+
+---
+
+Just paste that (or literally just say **"start Module 1"**, since I already have the roadmap in this thread) and we'll begin. Same works for Modules 2–6 later — swap the module name/topic in the first line.
