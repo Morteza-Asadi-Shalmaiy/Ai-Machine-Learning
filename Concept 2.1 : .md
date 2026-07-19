@@ -62,3 +62,75 @@ Teach the concept first, then give me a practical (ideally multi-part) exercise.
 ---
 
 Just paste that (or literally just say **"start Module 1"**, since I already have the roadmap in this thread) and we'll begin. Same works for Modules 2–6 later — swap the module name/topic in the first line.
+
+---
+
+# Module Starter Prompts — Python Interview Prep
+
+Paste the relevant prompt into this conversation whenever you're ready to start (or resume) that module. Each one is self-contained and tells me exactly how to coach you.
+
+---
+
+## Module 1: Core Data Structures & Idioms
+
+Start Module 1: Core Data Structures & Idioms.
+
+Coach me on Python core data structures & idioms — lists, dicts, tuples, sets, comprehensions, slicing, unpacking — as prep for a mid-level AI Engineer interview. I'm a Python beginner.
+
+Teach the concept first, then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer instead of fully working through it. Don't move on until I'm consistently passing.
+
+---
+
+## Module 2: Functions
+
+Start Module 2: Functions.
+
+Coach me on Python functions — default args, *args/**kwargs, and lambdas — as prep for a mid-level AI Engineer interview. I'm a Python beginner. Assume I've already covered core data structures (Module 1).
+
+Teach the concept first, then give me a practical (ideally multi-part) exercise, focused on how these show up in ML code (e.g. flexible config functions, sorted(key=lambda...), wrapping model calls). When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer. Don't move on until I'm consistently passing.
+
+---
+
+## Module 3: OOP Basics
+
+Start Module 3: OOP Basics.
+
+Coach me on Python OOP basics — classes, __init__, inheritance — as prep for a mid-level AI Engineer interview. I'm a Python beginner. Assume I've covered data structures and functions (Modules 1-2).
+
+Teach the concept first, explicitly connecting it to PyTorch's nn.Module pattern (class Model(nn.Module): def __init__(self): super().__init__()...) since that's why this matters for my interview. Then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer. Don't move on until I'm consistently passing.
+
+---
+
+## Module 4: NumPy Fundamentals
+
+Start Module 4: NumPy Fundamentals.
+
+Coach me on NumPy fundamentals — vectorization, broadcasting, indexing — as prep for a mid-level AI Engineer interview. I'm a Python beginner. Assume I've covered data structures, functions, and OOP (Modules 1-3).
+
+Teach the concept first, then give me a practical exercise, ideally including a "here's a slow Python loop, vectorize it with NumPy" style task since that's a classic interview question. When I answer, grade it like a real interviewer: what's correct, what's missing (e.g. did I actually use broadcasting/vectorization or just hide the loop), a score out of 10, and push me if I stop at a shallow/label-level answer. Don't move on until I'm consistently passing.
+
+---
+
+## Module 5: ML-Flavored Coding Exercises
+
+Start Module 5: ML-Flavored Coding Exercises.
+
+Coach me on writing small ML-related functions from scratch — sigmoid, softmax, accuracy/precision/F1, and small data manipulation tasks — as prep for a mid-level AI Engineer interview. I'm a Python beginner. Assume I've covered data structures, functions, OOP, and NumPy (Modules 1-4).
+
+Teach each concept briefly (the math + why it's implemented that way), then give me a practical exercise to implement it in Python/NumPy. When I answer, grade it like a real interviewer: correctness, edge cases (e.g. numerical stability in sigmoid/softmax, zero-division in precision/F1), a score out of 10, and push me if I stop at a shallow/label-level answer instead of fully implementing and testing it. Don't move on until I'm consistently passing.
+
+---
+
+## Module 6: Generators/Iterators (Lightweight)
+
+Start Module 6: Generators/Iterators.
+
+Coach me on Python generators and iterators — yield, __iter__, __next__ — as prep for a mid-level AI Engineer interview. I'm a Python beginner. Assume I've covered data structures, functions, OOP, NumPy, and ML-flavored exercises (Modules 1-5).
+
+Teach the concept first, explicitly connecting it to how PyTorch's DataLoader/Dataset pattern works under the hood, since that's why this matters for my interview. Then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer. Don't move on until I'm consistently passing.
+
+---
+
+## Optional: Mock Timed Round (after all 6 modules)
+
+Run a mock timed coding round mixing Modules 1 (data structures), 4 (NumPy), and 5 (ML-flavored functions), as final prep for my mid-level AI Engineer interview. Give me 2-3 realistic problems under a rough time limit, then grade my solutions like a real interviewer would — correctness, efficiency, edge cases, and whether my explanations were complete rather than surface-level.
