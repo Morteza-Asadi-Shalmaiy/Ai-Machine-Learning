@@ -559,3 +559,106 @@ Unpacking can be handy:
 - Or when iterating over `zip(labels, predictions)` to get true and pred pairs.
 
 ---
+
+# CheatSheet 
+
+Here's your **Module 1 Cheat Sheet** — a quick-reference card to review right before the interview. Keep it handy.
+
+---
+
+## 🐍 Python Data Structures & Idioms — ML Interview Cheat Sheet
+
+| Structure | Ordered? | Mutable? | Duplicates? | Create | Common ML Use |
+|-----------|----------|----------|-------------|--------|----------------|
+| **list**  | Yes      | Yes      | Yes         | `[ ]` or `list()` | Batch tokens, predictions, column values |
+| **tuple** | Yes      | No       | Yes         | `( )` or `,` | Fixed configs, multiple returns, dict keys |
+| **dict**  | Ins. order¹| Yes    | Keys unique | `{ : }` or `dict()` | Label mapping, configs, frequency counting |
+| **set**   | Ins. order¹| Yes    | No          | `{ }` (no `:`) or `set()` | Unique classes, fast membership tests |
+
+¹ Insertion order preserved in Python 3.7+.
+
+### 1. Lists
+```python
+preds = [2, 0, 1]
+preds.append(3)            # add to end
+preds.extend([4,5])        # extend with another iterable
+preds[0] = 9               # change by index
+len(preds)                 # length
+3 in preds                 # membership
+for p in preds: ...        # iterate
+```
+
+### 2. Tuples
+```python
+shape = (224, 224, 3)      # packing
+h, w, c = shape            # unpacking
+first, *rest = (1,2,3,4)   # extended unpacking: first=1, rest=[2,3,4]
+a, b = b, a                # swap
+# tuple as dict key (hashable)
+coords = {(x, y): value}
+```
+
+### 3. Dictionaries
+```python
+class_map = {0: "cat", 1: "dog"}
+class_map[2] = "bird"         # add/update
+class_map.get(2, "unknown")   # safe access with default
+del class_map[0]              # delete
+class_map.pop(1)              # remove and return value
+for k, v in class_map.items(): # iterate keys & values
+```
+**Counting pattern:**
+```python
+counts = {}
+for p in predictions:
+    counts[p] = counts.get(p, 0) + 1
+```
+
+### 4. Sets
+```python
+unique = set(labels)           # from list
+s = {0, 1, 2}
+s.add(3)
+s.remove(3)          # KeyError if missing
+s.discard(5)         # no error if missing
+# Set operations
+a | b   # union
+a & b   # intersection
+a - b   # difference
+```
+
+### 5. Comprehensions (list / dict / set)
+```python
+# List comprehension
+[x**2 for x in range(5)]                          # [0,1,4,9,16]
+[p for p in preds if p != -1]                     # filter
+
+# Dict comprehension
+{i: class_names[i] for i in unique_indices}       # map index -> name
+
+# Set comprehension
+{label for label in labels}                       # unique labels
+```
+
+### 6. Slicing
+```python
+seq[start:stop:step]
+seq[:3]       # first 3
+seq[2:]       # from index 2 to end
+seq[-2:]      # last 2
+seq[::2]      # every 2nd
+seq[::-1]     # reversed
+```
+**ML usage:** `batch = data[start:start+batch_size]`
+
+### 7. Unpacking
+```python
+x, y = (3, 4)               # tuple unpacking
+first, *rest = [1,2,3,4]    # rest = [2,3,4]
+for i, val in enumerate(vals):  # enumerate returns index,value
+```
+
+**Instant ML application:**
+```python
+X_train, X_test, y_train, y_test = train_test_split(X, y)  # unpack tuple
+```
