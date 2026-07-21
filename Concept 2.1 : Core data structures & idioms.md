@@ -10,6 +10,85 @@ For the purpose of baseline fluency. Every ML coding question sits on top of thi
 - Ordered, mutable, allow duplicates.
 - Used for sequences of samples, token IDs, batch indices, feature columns.
 - Common ops: `append`, `extend`, indexing, slicing, list comprehensions.
+Great question — let's make sure lists are crystal clear before you tackle the exercise.
+
+---
+
+## What is a list in Python?
+
+A **list** is an ordered, mutable (changeable) collection of items. You can put anything inside: numbers, strings, other lists, etc. In ML, you'll use lists constantly — to hold a batch of token IDs, a sequence of predictions, rows of a CSV, etc.
+
+**Key characteristics:**
+- **Ordered** — items stay in the order you add them.
+- **Mutable** — you can add, remove, or change items after creation.
+- **Allow duplicates** — the same value can appear many times.
+- **Indexable** — you access items by their position (0‑based).
+
+---
+
+## Creating a list
+```python
+# empty list
+empty = []
+
+# list of integers
+predictions = [2, 0, 2, 1, 0]
+
+# mixed types (rarely used in serious ML, but possible)
+mixed = [3, "cat", 2.5]
+
+# list from range
+nums = list(range(5))   # [0, 1, 2, 3, 4]
+```
+
+---
+
+## Basic operations you'll use in ML
+
+```python
+preds = [2, 0, 1]
+
+# Access by index
+first = preds[0]        # 2
+last  = preds[-1]       # 1
+
+# Slicing (sub‑list)
+first_two = preds[:2]   # [2, 0]
+
+# Add items
+preds.append(3)         # now [2, 0, 1, 3]
+preds.extend([4, 5])    # [2, 0, 1, 3, 4, 5]
+
+# Modify an item
+preds[1] = 9            # [2, 9, 1, ...]
+
+# Remove
+preds.remove(9)         # removes first occurrence of 9
+popped = preds.pop()    # removes & returns last item
+
+# Length
+len(preds)              # number of elements
+
+# Check membership
+2 in preds              # True
+
+# Iterate (loop)
+for p in preds:
+    print(p)
+```
+
+---
+
+## Why lists matter for ML interviews
+- You'll often be given raw Python data (like `predictions` and `labels`) and asked to compute metrics without NumPy.
+- List comprehensions are a Pythonic way to transform lists quickly:
+  ```python
+  squares = [x**2 for x in range(5)]   # [0, 1, 4, 9, 16]
+  ```
+- Slicing is how you'd manually implement mini‑batch extraction.
+- Lists underpin the concepts you'll later vectorize with NumPy.
+
+---
 
 ### 2. Tuples
 - Ordered, **immutable**, often used for fixed collections: `(height, width)`, coordinates, `(X_train, y_train)` returns from `train_test_split`.
