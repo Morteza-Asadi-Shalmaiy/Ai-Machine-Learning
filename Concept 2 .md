@@ -109,8 +109,3 @@ Coach me on Python generators and iterators — yield, __iter__, __next__ — as
 
 Teach the concept first, explicitly connecting it to how PyTorch's DataLoader/Dataset pattern works under the hood, since that's why this matters for my interview. Then give me a practical (ideally multi-part) exercise. When I answer, grade it like a real interviewer: what's correct, what's missing or fragile, a score out of 10, and push me if I stop at a shallow/label-level answer. Don't move on until I'm consistently passing.
 
----
-
-## Optional: Mock Timed Round (after all 6 modules)
-
-Run a mock timed coding round mixing Modules 1 (data structures), 4 (NumPy), and 5 (ML-flavored functions), as final prep for my mid-level AI Engineer interview. Give me 2-3 realistic problems under a rough time limit, then grade my solutions like a real interviewer would — correctness, efficiency, edge cases, and whether my explanations were complete rather than surface-level.
