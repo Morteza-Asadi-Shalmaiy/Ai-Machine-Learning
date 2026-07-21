@@ -62,8 +62,3 @@ Accept any number of numeric metric values (floats/ints) via `*args`. Return a d
 >>> aggregate_metrics(0.92, 0.87, 0.95)
 {'mean': 0.91333..., 'min': 0.87, 'max': 0.95}
 ```
-
----
-
-## 🎯 Ready?
-Write all four functions (plus any helper code you need) in a single reply. I’ll grade it on correctness, edge cases, style, and how you handle the tricky bits (missing keys, mutable defaults if they appear, using the right idioms). No pseudocode—real executable Python. Go!
